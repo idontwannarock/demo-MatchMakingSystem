@@ -8,7 +8,7 @@ import java.util.List;
 public class DistanceBasedRankingStrategyTest {
 
     @Test
-    public void OnlyOneCandidate_ReturnThatCandidate() {
+    public void GivenOnlyOneCandidate_ReturnThatCandidate() {
         // arrange
         Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
         Individual candidate = new Individual(2, Gender.MALE, 20, "", "", 1, 1);
@@ -22,7 +22,7 @@ public class DistanceBasedRankingStrategyTest {
     }
 
     @Test
-    public void TwoCandidates_ReturnFirstCandidate() {
+    public void GivenTwoDifferentDistancesCandidates_ReturnFirstCandidate() {
         // arrange
         Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
         Individual candidate1 = new Individual(2, Gender.MALE, 20, "", "", 1, 1);
@@ -37,7 +37,7 @@ public class DistanceBasedRankingStrategyTest {
     }
 
     @Test
-    public void TwoCandidates_ReturnSecondCandidate() {
+    public void GivenTwoDifferentDistancesCandidates_ReturnSecondCandidate() {
         // arrange
         Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
         Individual candidate1 = new Individual(2, Gender.MALE, 21, "", "", 2, 2);
@@ -52,7 +52,7 @@ public class DistanceBasedRankingStrategyTest {
     }
 
     @Test
-    public void TwoSameDistanceCandidates_ReturnFirstCandidate() {
+    public void GivenTwoSameDistanceCandidates_ReturnFirstCandidate() {
         // arrange
         Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
         Individual candidate1 = new Individual(2, Gender.MALE, 21, "", "", 1, 1);
@@ -67,7 +67,7 @@ public class DistanceBasedRankingStrategyTest {
     }
 
     @Test
-    public void TwoSameDistanceCandidates_ReturnSecondCandidate() {
+    public void GivenTwoSameDistanceCandidates_ReturnSecondCandidate() {
         // arrange
         Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
         Individual candidate1 = new Individual(2, Gender.MALE, 21, "", "", 1, 1);
