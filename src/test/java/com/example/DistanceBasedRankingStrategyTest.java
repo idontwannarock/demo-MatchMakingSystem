@@ -51,4 +51,34 @@ public class DistanceBasedRankingStrategyTest {
         Assert.assertEquals(candidate2, rankedCandidates.get(0));
     }
 
+    @Test
+    public void TwoSameDistanceCandidates_ReturnFirstCandidate() {
+        // arrange
+        Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
+        Individual candidate1 = new Individual(2, Gender.MALE, 21, "", "", 1, 1);
+        Individual candidate2 = new Individual(3, Gender.MALE, 20, "", "", 1, 1);
+
+        // act
+        List<Individual> rankedCandidates = new DistanceBasedRankingStrategy().rank(individual, List.of(candidate1, candidate2));
+
+        // assert
+        Assert.assertEquals(2, rankedCandidates.size());
+        Assert.assertEquals(candidate1, rankedCandidates.get(0));
+    }
+
+    @Test
+    public void TwoSameDistanceCandidates_ReturnSecondCandidate() {
+        // arrange
+        Individual individual = new Individual(1, Gender.FEMALE, 18, "", "", 1, 1);
+        Individual candidate1 = new Individual(2, Gender.MALE, 21, "", "", 1, 1);
+        Individual candidate2 = new Individual(3, Gender.MALE, 20, "", "", 1, 1);
+
+        // act
+        List<Individual> rankedCandidates = new DistanceBasedRankingStrategy().rank(individual, List.of(candidate2, candidate1));
+
+        // assert
+        Assert.assertEquals(2, rankedCandidates.size());
+        Assert.assertEquals(candidate1, rankedCandidates.get(0));
+    }
+
 }
