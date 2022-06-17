@@ -34,4 +34,10 @@ public class Individual {
     public double distance(Individual target) {
         return this.coord.distance(target.getCoord());
     }
+
+    public long countSameHabits(Individual target) {
+        return this.habits.stream()
+                .filter(target.habits::contains)
+                .count();
+    }
 }
