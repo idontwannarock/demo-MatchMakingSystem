@@ -30,4 +30,8 @@ public class Individual {
         this.habits = Arrays.stream(habits.split(",")).collect(Collectors.toList());
         this.coord = new Coordinate(x, y);
     }
+
+    public double distance(Individual target) {
+        return this.coord.distance(target.getCoord());
+    }
 }
