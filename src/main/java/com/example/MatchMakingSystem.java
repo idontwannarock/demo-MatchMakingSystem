@@ -1,6 +1,5 @@
 package com.example;
 
-import java.util.Collections;
 import java.util.List;
 
 public class MatchMakingSystem {
@@ -16,11 +15,6 @@ public class MatchMakingSystem {
 
     public MatchMakingSystem rankWith(Individual individual) {
         candidates = rankingStrategy.rank(individual, candidates);
-        return this;
-    }
-
-    public MatchMakingSystem reverse() {
-        Collections.reverse(candidates);
         return this;
     }
 
