@@ -15,7 +15,9 @@ public class MatchMakingSystemTest {
         Individual candidate2 = new Individual(3, Gender.MALE, 21, "", "", 1, 1);
 
         // act
-        Individual actual = new MatchMakingSystem(new DistanceBasedRankingStrategy(), List.of(candidate1, candidate2))
+        Individual actual = new MatchMakingSystem(
+                List.of(candidate1, candidate2),
+                new DistanceBasedRankingStrategy())
                 .rankWith(individual)
                 .match();
 
@@ -31,7 +33,10 @@ public class MatchMakingSystemTest {
         Individual candidate2 = new Individual(3, Gender.MALE, 21, "", "", 1, 1);
 
         // act
-        Individual actual = new MatchMakingSystem(new DistanceBasedRankingStrategy().reverse(), List.of(candidate1, candidate2))
+        Individual actual = new MatchMakingSystem(
+                List.of(candidate1, candidate2),
+                new DistanceBasedRankingStrategy(),
+                new ReverseRankingStrategy())
                 .rankWith(individual)
                 .match();
 
@@ -47,7 +52,9 @@ public class MatchMakingSystemTest {
         Individual candidate2 = new Individual(3, Gender.MALE, 21, "", "jogging", 1, 1);
 
         // act
-        Individual actual = new MatchMakingSystem(new HabitBasedRankingStrategy(), List.of(candidate1, candidate2))
+        Individual actual = new MatchMakingSystem(
+                List.of(candidate1, candidate2),
+                new HabitBasedRankingStrategy())
                 .rankWith(individual)
                 .match();
 
@@ -63,7 +70,10 @@ public class MatchMakingSystemTest {
         Individual candidate2 = new Individual(3, Gender.MALE, 21, "", "jogging", 1, 1);
 
         // act
-        Individual actual = new MatchMakingSystem(new HabitBasedRankingStrategy().reverse(), List.of(candidate1, candidate2))
+        Individual actual = new MatchMakingSystem(
+                List.of(candidate1, candidate2),
+                new HabitBasedRankingStrategy(),
+                new ReverseRankingStrategy())
                 .rankWith(individual)
                 .match();
 
