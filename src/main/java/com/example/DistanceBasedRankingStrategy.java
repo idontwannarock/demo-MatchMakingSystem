@@ -6,14 +6,11 @@ import java.util.stream.Collectors;
 
 public class DistanceBasedRankingStrategy implements RankingStrategy {
 
-    private final boolean shouldReverseRanking;
+    private boolean shouldReverseRanking = false;
 
-    public DistanceBasedRankingStrategy() {
-        this.shouldReverseRanking = false;
-    }
-
-    public DistanceBasedRankingStrategy(boolean shouldReverseRanking) {
-        this.shouldReverseRanking = shouldReverseRanking;
+    public DistanceBasedRankingStrategy reverse() {
+        shouldReverseRanking = !shouldReverseRanking;
+        return this;
     }
 
     @Override

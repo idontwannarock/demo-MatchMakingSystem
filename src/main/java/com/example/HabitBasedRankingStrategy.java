@@ -6,14 +6,11 @@ import java.util.stream.Collectors;
 
 public class HabitBasedRankingStrategy implements RankingStrategy {
 
-    private final boolean shouldReverseRanking;
+    private boolean shouldReverseRanking;
 
-    public HabitBasedRankingStrategy() {
-        this.shouldReverseRanking = false;
-    }
-
-    public HabitBasedRankingStrategy(boolean shouldReverseRanking) {
-        this.shouldReverseRanking = shouldReverseRanking;
+    public HabitBasedRankingStrategy reverse() {
+        shouldReverseRanking = !shouldReverseRanking;
+        return this;
     }
 
     @Override
